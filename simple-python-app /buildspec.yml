@@ -13,12 +13,12 @@ phases:
   pre_build:
     commands:
       - echo "Installing dependencies..."
-      - pip install -r day-14/simple-python-app/requirements.txt
+      - pip install -r simple-python-app/requirements.txt
 
   build:
     commands:
       - echo "Running tests..."
-      - cd day-14/simple-python-app/
+      - cd simple-python-app/
       - echo "Logging into Docker Hub..."
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin
       - IMAGE_NAME="$DOCKER_REGISTRY_USERNAME/sample-python-flask-app:latest"
